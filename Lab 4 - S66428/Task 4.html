@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Manager</title>
+<style>
+    p {
+        padding: 20px;
+        font-size: 18px;
+        cursor: pointer; 
+    }
+</style>
+</head>
+<body>
+    <p id="paragraph">Click me to change color!</p>
+
+    <script>
+        
+        let paragraph = document.getElementById("paragraph");
+
+        // create handler for yellow background ...
+        paragraph.onclick = function() {
+            this.style.backgroundColor = "yellow";
+        };
+
+        // create handler for blue background ...
+        paragraph.ondblclick = function() {
+            this.style.backgroundColor = "blue";
+        };
+
+        // create handler for red background ...
+        paragraph.onmouseover = function() {
+            this.style.backgroundColor = "red";
+        };
+
+        // create handler for green backgroud ...
+        paragraph.onmouseout = function() {
+            this.style.backgroundColor = "green";
+        };
+    </script>
+</body>
+</html>

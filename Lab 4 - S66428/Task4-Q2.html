@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Field Effects</title>
+<style>
+    /* Style ...*/
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        transition: border-color 0.3s ease; /* for smooth transaction*/
+    }
+
+    /* create Onfocus ... */
+    input[type="text"]:focus {
+        border-color: dodgerblue;
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+    }
+</style>
+</head>
+<body>
+    <label for="textField">Enter Text:</label>
+    <input type="text" id="textField" onchange="changeEffect()" onfocus="focusEffect()" onblur="blurEffect()">
+    <p id="feedback"></p>
+
+    <script>
+        // Create the Onchange for textfield ...
+        function changeEffect() {
+            let textField = document.getElementById("textField");
+            textField.style.backgroundColor = "lightyellow";
+            document.getElementById("feedback").innerText = "Text changed!";
+        }
+
+        // Create the Onfocus for textfield ...
+        function focusEffect() {
+            let textField = document.getElementById("textField");
+            textField.style.borderStyle = "dashed";
+            document.getElementById("feedback").innerText = "Text field focused!";
+        }
+
+        // Create the Onblur for textfield ...
+        function blurEffect() {
+            let textField = document.getElementById("textField");
+            textField.style.borderStyle = "solid";
+            textField.style.borderColor = "#ccc";
+            textField.style.backgroundColor = "white";
+            document.getElementById("feedback").innerText = "Text field blurred!";
+        }
+    </script>
+</body>
+</html>
